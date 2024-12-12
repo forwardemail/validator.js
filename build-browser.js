@@ -16,9 +16,9 @@ rollup({
 })
   .then((bundle) =>
     bundle.write({
-      dest: "validator.js",
+      file: "validator.js",
+      name: pkg.name,
       format: "umd",
-      moduleName: pkg.name,
       banner: `/*!\n${String(fs.readFileSync("./LICENSE"))
         .trim()
         .split("\n")
