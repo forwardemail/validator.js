@@ -17,7 +17,12 @@ rollup({
   .then((bundle) =>
     bundle.write({
       file: "validator.js",
-      name: pkg.name,
+      // name: pkg.name,
+      // NOTE: hard-coded below due to @forwardemail/validator
+      //       otherwise tests won't pass in `test/validators.test.js`
+      //       it('should bind validator to the window if no module loaders are available', () => {
+      //
+      name: 'validator',
       format: "umd",
       banner: `/*!\n${String(fs.readFileSync("./LICENSE"))
         .trim()
